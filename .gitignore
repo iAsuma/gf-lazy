@@ -1,0 +1,9 @@
+.idea/
+.vscode/
+vendor/
+**/.DS_Store
+test
+config
+manifest
+runtime
+go.sum
