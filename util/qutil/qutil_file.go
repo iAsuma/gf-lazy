@@ -1,9 +1,7 @@
 package qutil
 
 import (
-	"context"
 	"fmt"
-	"github.com/gogf/gf/v2/frame/g"
 	"log"
 	"os"
 	"path/filepath"
@@ -61,17 +59,4 @@ func GetCurrentPath() string {
 		}
 	}
 	return dir
-}
-
-// GetFormFileName 获取上传文件名
-func GetFormFileName(ctx context.Context, name string) (fullName string, err error) {
-	r := g.RequestFromCtx(ctx)
-	if file := r.GetUploadFile(name); file != nil {
-		path := "/tmp/"
-		if fileName, err := file.Save(path); err == nil {
-			fullName = path + fileName
-		}
-	}
-
-	return fullName, err
 }
